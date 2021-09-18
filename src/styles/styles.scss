@@ -178,6 +178,7 @@ img#background {
   width: 100%;
   height: 100%;
   position: fixed;
+  object-fit: cover;
 }
 
 div#loadScreen {
@@ -387,5 +388,13 @@ div#content {
       width: 70vw;
       height: 70vw;
     }
+  }
+  div.dexEntry {
+    position: absolute;
+    width: 80%;
+    height: 80vh;
+    background-color: red;
+    left: 10%;
+    top: 10%;
   }
 }

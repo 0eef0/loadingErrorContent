@@ -24,13 +24,15 @@ summary {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /* 
@@ -55,6 +57,7 @@ blockquote,
 q {
   quotes: none;
 }
+
 blockquote::before, blockquote::after,
 q::before,
 q::after {
@@ -108,15 +111,15 @@ pre {
   word-wrap: break-word;
 }
 
-input[type=radio] {
+input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-.ie7 input[type=checkbox] {
+.ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
@@ -155,15 +158,15 @@ sub {
 
 .clickable,
 label,
-input[type=button],
-input[type=submit],
-input[type=file],
+input[type="button"],
+input[type="submit"],
+input[type="file"],
 button {
   cursor: pointer;
 }
 
 button,
-input[type=button] {
+input[type="button"] {
   width: auto;
   overflow: hidden;
 }
@@ -182,6 +185,8 @@ img#background {
   width: 100%;
   height: 100%;
   position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 div#loadScreen {
@@ -192,11 +197,13 @@ div#loadScreen {
   height: 100vh;
   z-index: 10;
 }
+
 div#loadScreen img {
   position: absolute;
   width: 100%;
   height: 100%;
 }
+
 div#loadScreen #loadText {
   position: absolute;
   color: white;
@@ -206,9 +213,11 @@ div#loadScreen #loadText {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
 }
+
 div#loadScreen #loadText span {
   font-size: 1rem;
 }
+
 div#loadScreen #typingGame {
   position: absolute;
   top: 70%;
@@ -216,9 +225,11 @@ div#loadScreen #typingGame {
   text-align: center;
   font-size: 5rem;
 }
+
 div#loadScreen #typingGame::first-letter {
   background-color: rgba(255, 0, 0, 0.4);
 }
+
 div#loadScreen #success {
   position: absolute;
   top: 70%;
@@ -234,11 +245,13 @@ div#errorScreen {
   width: 100%;
   height: 100vh;
 }
+
 div#errorScreen img {
   position: absolute;
   width: 100%;
   height: 100%;
 }
+
 div#errorScreen h1#command {
   position: absolute;
   width: 100%;
@@ -247,6 +260,7 @@ div#errorScreen h1#command {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
 }
+
 div#errorScreen button#homePage {
   position: absolute;
   width: 20%;
@@ -257,6 +271,7 @@ div#errorScreen button#homePage {
   background-color: red;
   text-align: center;
   font-size: 3rem;
+  -webkit-transition: top 0.1s, left 0.1s;
   transition: top 0.1s, left 0.1s;
 }
 
@@ -270,64 +285,81 @@ div#sidebar {
   height: 100vh;
   overflow: hidden;
   z-index: 1;
+  -webkit-transition: width 0.25s;
   transition: width 0.25s;
 }
+
 div#sidebar img {
   width: 5rem;
   display: block;
   margin: 1rem auto 3rem auto;
 }
+
 div#sidebar li.closedItem {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: bolder;
 }
+
 div#sidebar li.expandedItem {
   display: none;
   width: 100%;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 div#sidebar li.expandedItem a {
   color: unset;
   text-decoration: none;
   white-space: nowrap;
 }
+
 div#sidebar li.expandedItem p {
+  -webkit-transition: padding-left 0.25s;
   transition: padding-left 0.25s;
   width: 100%;
 }
+
 div#sidebar li.expandedItem p span {
   position: absolute;
   left: 13rem;
 }
+
 div#sidebar li.expandedItem ol.dropdown {
   margin-left: 1rem;
 }
+
 div#sidebar li.expandedItem ol.dropdown li.dropdownItem {
   display: block;
   font-size: 1.5rem;
   border: none;
+  -webkit-transition: padding-left 0.25s;
   transition: padding-left 0.25s;
 }
+
 div#sidebar li.expandedItem ol.dropdown li.dropdownItem:hover {
   padding-left: 1rem;
   border-left: 0.3rem black solid;
 }
+
 div#sidebar li.expandedItem:hover p {
   border-left: 0.3rem black solid;
   padding-left: 1rem;
 }
+
 div#sidebar:hover {
   width: 15rem;
 }
+
 div#sidebar:hover ul {
   margin-left: 1rem;
 }
+
 div#sidebar:hover li.expandedItem {
   display: block;
 }
+
 div#sidebar:hover li.closedItem {
   display: none;
 }
@@ -336,19 +368,26 @@ div#content {
   position: absolute;
   right: 0;
   width: calc(100% - 5rem);
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
 }
+
 @media only screen and (max-width: 730px) {
   div#content {
-    grid-template-columns: 50% 50%;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
   }
 }
+
 @media only screen and (max-width: 500px) {
   div#content {
-    grid-template-columns: 100%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
   }
 }
+
 div#content div.pokemon {
   background-color: rgba(255, 255, 255, 0.5);
   border: black 2px solid;
@@ -358,14 +397,17 @@ div#content div.pokemon {
   width: 25vw;
   height: 25vw;
 }
+
 div#content div.pokemon a {
   position: relative;
   top: -100%;
 }
+
 div#content div.pokemon img {
   width: 100%;
   height: 100%;
 }
+
 div#content div.pokemon h1 {
   position: relative;
   top: -10%;
@@ -378,15 +420,27 @@ div#content div.pokemon h1 {
   border-radius: 1rem;
   border: black 2px solid;
 }
+
 @media only screen and (max-width: 730px) {
   div#content div.pokemon {
     width: 33vw;
     height: 33vw;
   }
 }
+
 @media only screen and (max-width: 500px) {
   div#content div.pokemon {
     width: 70vw;
     height: 70vw;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+div#content div.dexEntry {
+  position: absolute;
+  width: 80%;
+  height: 80vh;
+  background-color: red;
+  left: 10%;
+  top: 10%;
+}
+/*# sourceMappingURL=styles.css.map */

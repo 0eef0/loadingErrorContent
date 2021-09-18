@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Loading from '../components/Loading';
-import Error from '../components/Error';
-import '../styles/styles.css';
-import logo from '../images/logo.png';
+import Loading from './components/Loading';
+import Error from './components/Error';
+import DexEntry from './components/DexEntry';
+import './styles/styles.css';
+import logo from './images/logo.png';
 
 const url = 'https://pokeapi.co/api/v2/pokemon/?limit=898';
 
@@ -10,6 +11,7 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isErr, setIsErr] = useState(false);
     const [pkmn, setPkmn] = useState([]);
+    const [showEntry, setShowEntry] = useState(false);
 
     const getPkmn = async () => {
       const response = await fetch(url);
@@ -45,6 +47,11 @@ const App = () => {
             temp[i] = temp[i][0].toUpperCase() + temp[i].substr(1);
         }
         return temp.join(' ')
+    }
+
+    const loadEntry = (pkmn) => {
+        console.log('fun');
+        return <DexEntry />
     }
 
     return (
@@ -100,7 +107,7 @@ const App = () => {
         <div id='content'>
           {
             pkmn.map((poke, index) => {
-              return <div className='pokemon' key={index+1}>
+              return <div className='pokemon' key={index+1} onClick={() => {setShowEntry(true)}}>
                 <a id={poke.name} />
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`} alt={poke.name} />
                 <h1 key={index+1}>{`#${index+1} ${capitalize(poke.name.split('-')[0])}`}</h1>
