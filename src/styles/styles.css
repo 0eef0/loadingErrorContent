@@ -1,0 +1,392 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* 
+Helps with img scaling, might have an issue if no make embed
+*/
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #222;
+  cursor: help;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input[type=checkbox] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type=checkbox] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+  font-size: 99%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+button,
+input[type=button] {
+  width: auto;
+  overflow: hidden;
+}
+
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.clearfix::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+img#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+div#loadScreen {
+  background-color: red;
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+div#loadScreen img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+div#loadScreen #loadText {
+  position: absolute;
+  color: white;
+  width: 100%;
+  font-size: 10rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+div#loadScreen #loadText span {
+  font-size: 1rem;
+}
+div#loadScreen #typingGame {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+}
+div#loadScreen #typingGame::first-letter {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+div#loadScreen #success {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+}
+
+div#errorScreen {
+  background-color: white;
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+div#errorScreen img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+div#errorScreen h1#command {
+  position: absolute;
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+div#errorScreen button#homePage {
+  position: absolute;
+  width: 20%;
+  height: 10vh;
+  border-radius: 1rem;
+  color: white;
+  border: black 2px solid;
+  background-color: red;
+  text-align: center;
+  font-size: 3rem;
+  transition: top 0.1s, left 0.1s;
+}
+
+div#sidebar {
+  background-color: red;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  transition: width 0.25s;
+}
+div#sidebar img {
+  width: 5rem;
+  display: block;
+  margin: 1rem auto 3rem auto;
+}
+div#sidebar li.closedItem {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+div#sidebar li.expandedItem {
+  display: none;
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+div#sidebar li.expandedItem a {
+  color: unset;
+  text-decoration: none;
+  white-space: nowrap;
+}
+div#sidebar li.expandedItem p {
+  transition: padding-left 0.25s;
+  width: 100%;
+}
+div#sidebar li.expandedItem p span {
+  position: absolute;
+  left: 13rem;
+}
+div#sidebar li.expandedItem ol.dropdown {
+  margin-left: 1rem;
+}
+div#sidebar li.expandedItem ol.dropdown li.dropdownItem {
+  display: block;
+  font-size: 1.5rem;
+  border: none;
+  transition: padding-left 0.25s;
+}
+div#sidebar li.expandedItem ol.dropdown li.dropdownItem:hover {
+  padding-left: 1rem;
+  border-left: 0.3rem black solid;
+}
+div#sidebar li.expandedItem:hover p {
+  border-left: 0.3rem black solid;
+  padding-left: 1rem;
+}
+div#sidebar:hover {
+  width: 15rem;
+}
+div#sidebar:hover ul {
+  margin-left: 1rem;
+}
+div#sidebar:hover li.expandedItem {
+  display: block;
+}
+div#sidebar:hover li.closedItem {
+  display: none;
+}
+
+div#content {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 5rem);
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+@media only screen and (max-width: 730px) {
+  div#content {
+    grid-template-columns: 50% 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  div#content {
+    grid-template-columns: 100%;
+  }
+}
+div#content div.pokemon {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: black 2px solid;
+  border-radius: 50%;
+  margin: 1rem;
+  padding: 1rem;
+  width: 25vw;
+  height: 25vw;
+}
+div#content div.pokemon a {
+  position: relative;
+  top: -100%;
+}
+div#content div.pokemon img {
+  width: 100%;
+  height: 100%;
+}
+div#content div.pokemon h1 {
+  position: relative;
+  top: -10%;
+  width: 100%;
+  text-align: center;
+  font-size: calc(1vh + 1vw);
+  padding: 1rem;
+  background-color: red;
+  color: white;
+  border-radius: 1rem;
+  border: black 2px solid;
+}
+@media only screen and (max-width: 730px) {
+  div#content div.pokemon {
+    width: 33vw;
+    height: 33vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  div#content div.pokemon {
+    width: 70vw;
+    height: 70vw;
+  }
+}/*# sourceMappingURL=styles.css.map */
