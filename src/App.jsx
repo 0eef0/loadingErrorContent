@@ -5,7 +5,7 @@ import DexEntry from './components/DexEntry';
 import './styles/styles.css';
 import logo from './images/logo.png';
 
-const url = 'https://pokeapi.co/api/v2/pokemon/?limit=898';
+const url = 'https://pokeapi.co/api/v2/pokemon/?limit=2000';
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
